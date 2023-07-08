@@ -22,11 +22,11 @@ export default function Home() {
           <div className="grid grid-cols-11 mix-blend-overlay">
             {Array(12)
               .fill(null)
-              .map((i: number) => (
+              .map((_, i: number) => (
                 <Fragment key={i}>
                   {Array(11)
                     .fill(null)
-                    .map((i: number) => (
+                    .map((_, i: number) => (
                       <Fragment key={i}>
                         <HoverBlock />
                       </Fragment>
