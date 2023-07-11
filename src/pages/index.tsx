@@ -11,6 +11,7 @@ export default function Home() {
       </Head>
       <main className="flex min-h-screen items-center justify-center p-4">
         <div className="relative w-max overflow-hidden">
+          <div className="absolute inset-0 -z-10 bg-[#fd5530] mix-blend-screen" />
           <Image
             src={
               "https://uploads-ssl.webflow.com/640eeddd1d1ef84438c097d7/640f394d495e6943529531e0_zso-model_walking-p-800.jpg"
