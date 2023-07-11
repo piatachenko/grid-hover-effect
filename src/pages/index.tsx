@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
+import { Fragment } from "react";
+import HoverBlock from "~/components/HoverBlock";
 
 export default function Home() {
   return (
@@ -11,6 +13,21 @@ export default function Home() {
       </Head>
       <main className="flex min-h-screen items-center justify-center p-4">
         <div className="relative w-max overflow-hidden">
+          <div className="grid grid-cols-11 mix-blend-overlay">
+            {Array(12)
+              .fill(null)
+              .map((i) => (
+                <Fragment key={i}>
+                  {Array(11)
+                    .fill(null)
+                    .map((i) => (
+                      <Fragment key={i}>
+                        <HoverBlock />
+                      </Fragment>
+                    ))}
+                </Fragment>
+              ))}
+          </div>
           <div className="absolute inset-0 -z-10 bg-[#fd5530] mix-blend-screen" />
           <Image
             src={
