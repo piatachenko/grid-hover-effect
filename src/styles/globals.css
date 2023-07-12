@@ -9,3 +9,16 @@ body {
 .active {
   @apply opacity-100;
 }
+
+.relative {
+  clip-path: polygon(
+    0 4em,
+    4em 0,
+    calc(100% - 4em) 0,
+    100% 4em,
+    100% calc(100% - 4em),
+    calc(100% - 4em) 100%,
+    4em 100%,
+    0 calc(100% - 4em)
+  );
+}
