@@ -1,9 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import HoverBlock from "~/components/HoverBlock";
 
 export default function Home() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  function handleLoad() {
+    setIsLoaded(true);
+  }
   return (
     <>
       <Head>
@@ -30,13 +34,14 @@ export default function Home() {
           </div>
           <div className="absolute inset-0 -z-10 bg-[#fd5530] mix-blend-screen" />
           <Image
-            src={
-              "https://uploads-ssl.webflow.com/640eeddd1d1ef84438c097d7/640f394d495e6943529531e0_zso-model_walking-p-800.jpg"
-            }
+            onLoad={handleLoad}
+            src={isLoaded ? "/image-main.jpg" : "/image20x21.jpg"}
             alt={"Image"}
             width={800}
             height={824}
-            className="absolute bottom-1/2 right-1/2 -z-20 h-[100.5%] translate-x-1/2 translate-y-1/2 object-cover"
+            className={`absolute bottom-1/2 right-1/2 -z-20 h-[100.5%] translate-x-1/2 translate-y-1/2 object-cover ${
+              !isLoaded ? "animate-pulse" : ""
+            }`}
           ></Image>
         </div>
       </main>
