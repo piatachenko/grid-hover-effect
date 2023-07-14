@@ -5,9 +5,11 @@ import HoverBlock from "~/components/HoverBlock";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
+
   function handleLoad() {
     setIsLoaded(true);
   }
+  
   return (
     <>
       <Head>

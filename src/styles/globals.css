@@ -6,10 +6,6 @@ body {
   @apply bg-black/90;
 }
 
-.active {
-  @apply opacity-100;
-}
-
 .relative {
   clip-path: polygon(
     0 4em,

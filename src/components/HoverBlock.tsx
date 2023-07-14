@@ -1,11 +1,13 @@
-import { type MouseEvent } from "react";
+import { useState } from "react";
 
 export default function HoverBlock() {
-  function handleMouseOver(e: MouseEvent<HTMLDivElement>) {
-    const el = e.target as HTMLDivElement;
-    el.classList.add("active");
+  const [isActive, setIsActive] = useState(false);
+
+  function handleMouseOver() {
+    setIsActive(true);
+
     setTimeout(() => {
-      el.classList.remove("active");
+      setIsActive(false);
     }, 400);
   }
 
@@ -13,7 +15,9 @@ export default function HoverBlock() {
     <>
       <div
         onMouseOver={handleMouseOver}
-        className="aspect-square w-[10vw] bg-white opacity-0 transition-all duration-[.4s] ease-[cubic-bezier(.645,.045,.355,1)] sm:w-14"
+        className={`aspect-square w-[10vw] bg-white transition-all duration-[.4s] ease-[cubic-bezier(.645,.045,.355,1)] sm:w-14 ${
+          isActive ? "opacity-100" : "opacity-0"
+        }`}
       />
     </>
   );
